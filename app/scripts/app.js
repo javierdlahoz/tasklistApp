@@ -12,13 +12,12 @@ angular
   .module('tasklistApp', [
     'ngCookies',
     'ngTouch',
-    'ngRoute' ,
-    'ngResource',
+    'ngRoute',
     'ngAnimate'
   ]).config(function ($routeProvider){
         $routeProvider
             .when('/', {
                 controller: 'TaskController',
-                templateUrl: 'views/tasks/index.html'
+                templateUrl: 'scripts/module/Task/View/index.html'
             })
     });

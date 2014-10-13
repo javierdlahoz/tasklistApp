@@ -73,7 +73,7 @@ class Task
      */
     public function setIsDone($is_done)
     {
-        if($is_done == true)
+        if($is_done === "true")
         {
             $this->is_done = 1;
         }

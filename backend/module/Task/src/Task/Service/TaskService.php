@@ -102,6 +102,7 @@ class TaskService {
      */
     public function addTask(Task $task)
     {
+        $task->setIsDone(false);
         $this->getEntityManager()->persist($task);
         $this->getEntityManager()->flush();
     }

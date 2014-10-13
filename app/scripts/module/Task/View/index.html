@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+</head>
+<body>
+
+    <h3>This is your tasks list</h3>
+
+    <div class="alert alert-{{alert.type}}" ng-show="showAlert">
+	    <button type="button" class="close" ng-click="showAlert = false" aria-hidden="true">&times;</button>
+		{{alert.message}}    
+	</div>
+
+	<div class="panel panel-info">
+		  <div class="panel-body">
+				<div class="row">
+					<div class="col-xs-10 col-sm-10 col-md-10 col-lg-10">
+						<input type="text" class="form-control" ng-model="newTaskDescription">
+					</div>
+					<div class="col-xs-2 col-sm-2 col-md-2 col-lg-2">
+						<button type="button" class="btn btn-success btn-xl glyphicon glyphicon-plus"
+						ng-click="addTask()"></button>
+					</div>
+				</div>
+		  </div>
+	</div>
+
+	<table class="table table-hover table-striped">
+		<tr ng-repeat="task in tasks">
+			<td width="91%">
+				<span ng-hide="isEditing[task.taskId]">
+					<s ng-if="task.isDone">{{task.description}}</s>
+					<span ng-if="task.isDone == false">{{task.description}}</span>
+				</span>
+    			<input type="text" class="form-control" ng-model="task.description" ng-show="isEditing[task.taskId]">
+			</td>
+			<td width="3%">
+				<button ng-if="task.isDone == false" type="button" class="btn btn-primary btn-sm glyphicon glyphicon-pencil" 
+	    		ng-click="isEditing[task.taskId] = true" ng-hide="isEditing[task.taskId]"></button>
+
+	    		<button type="button" class="btn btn-primary btn-sm glyphicon glyphicon glyphicon-ok" 
+	    		ng-click="editTask(task); isEditing[task.taskId] = false" ng-show="isEditing[task.taskId]"></button>
+			</td>
+			<td width="3%">
+				<button ng-if="task.isDone == false" type="button" class="btn btn-success btn-sm glyphicon glyphicon-ok" ng-click="isDoneTask(task)"></button>
+			</td>
+			<td width="3%">
+				<button type="button" class="btn btn-danger btn-sm glyphicon glyphicon-remove" ng-click="removeTask(task.taskId)"></button>
+			</td>
+		</tr>
+	</table>
+
+</body>
+</html>

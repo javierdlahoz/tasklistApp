@@ -18,13 +18,8 @@ class TaskHelper
     public function validateAddPost($post)
     {
         $description = $post->get('description');
-        $isDone = $post->get('isDone');
 
         if(empty($description))
-        {
-            return false;
-        }
-        elseif(empty($isDone))
         {
             return false;
         }

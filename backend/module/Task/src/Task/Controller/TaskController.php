@@ -38,7 +38,7 @@ class TaskController extends AbstractRestfulController
         {
             $task = new Task();
             $task->setDescription($post->get('description'));
-            $task->setIsDone($post->get('isDone'));
+            $task->setIsDone(false);
 
             $this->getServiceLocator()->get('taskService')->addTask($task);
             return new JsonModel(array('status' =>  "success"));
