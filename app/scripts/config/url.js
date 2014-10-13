@@ -1,7 +1,7 @@
 /**
  * Created by jdelahoz1 on 10/13/14.
  */
-var mainUrl = "../backend/public";
+var mainUrl = "api/index.php";
 
 window.appUrl = {
     getAllTasks: mainUrl + "/task/list",
