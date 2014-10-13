@@ -107,7 +107,7 @@ angular.module('tasklistApp')
                 method: "GET"
             }).success(function(data){
                 $scope.tasks = data;
-               
+
             });
         };
 
