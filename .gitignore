@@ -3,3 +3,6 @@ dist
 .tmp
 .sass-cache
 .idea
+.travis.yml
+Gruntfile.js
+npm-debug.log
